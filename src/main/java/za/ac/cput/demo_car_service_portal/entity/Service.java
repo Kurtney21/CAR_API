@@ -12,10 +12,18 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Service implements Serializable {
-    @NotNull
-    @Column(name = "service_id", length = 10)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    private Long serviceId;
-    private String name, cost, length;
+    private Long id;
+
+    @Column(name = "Service_Name", length = 50)
+    private String name;
+
+    @Column(name = "Description", length = 50)
+    private String description;
+
+    @Column(name = "Price", length = 50)
+    private Long cost;
+
+    @Column(name = "Workshop_Id", length = 50)
+    private long workshop_Id;
 }

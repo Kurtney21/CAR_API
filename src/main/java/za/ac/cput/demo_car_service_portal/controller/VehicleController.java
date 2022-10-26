@@ -32,13 +32,13 @@ public class VehicleController {
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Vehicle>> readAll() {
-        List<Vehicle> vehicles = vehicleService.findAll();
+        List<Vehicle> vehicles = vehicleService.readAll();
         return ResponseEntity.ok(vehicles);
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Vehicle> readById(@PathVariable Long id) {
-        Vehicle vehicle = vehicleService.findById(id);
+        Vehicle vehicle = vehicleService.readById(id);
         return ResponseEntity.ok(vehicle);
     }
 

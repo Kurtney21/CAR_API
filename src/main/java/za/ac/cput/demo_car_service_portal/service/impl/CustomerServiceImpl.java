@@ -26,10 +26,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<Customer> findAll() { return repository.findAll(); }
+    public List<Customer> readAll() { return repository.findAll(); }
 
     @Override
-    public Customer findById(Long key) { return repository.findById(key).orElse(null); }
+    public Customer readById(Long key) { return repository.findById(key).orElse(null); }
 
     @Override
     public void delete(Long id) { repository.deleteById(id);}

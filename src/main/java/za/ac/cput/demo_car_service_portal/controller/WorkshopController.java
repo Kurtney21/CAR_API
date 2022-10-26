@@ -34,13 +34,13 @@ public class WorkshopController {
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Workshop>> readAll() {
-        List<Workshop> workshops = workshopService.findAll();
+        List<Workshop> workshops = workshopService.readAll();
         return ResponseEntity.ok(workshops);
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Workshop> readById(@PathVariable Long id) {
-        Workshop workshop = workshopService.findById(id);
+        Workshop workshop = workshopService.readById(id);
         return ResponseEntity.ok(workshop);
     }
 

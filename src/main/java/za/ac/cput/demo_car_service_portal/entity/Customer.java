@@ -12,12 +12,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Customer implements Serializable {
-    @NotNull
-    @Column(name = "customer_id", length = 10)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Long custId;
-    @Embedded
-    private UserCredentials userCredentials;
+    private Long id;
 
+    @Embedded
+    private User user;
 }

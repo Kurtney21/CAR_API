@@ -26,12 +26,12 @@ public class ServicesServiceImpl implements ServicesService {
     }
 
     @Override
-    public List<Service> findAll() {
+    public List<Service> readAll() {
         return repository.findAll();
     }
 
     @Override
-    public Service findById(Long aLong) {
+    public Service readById(Long aLong) {
         return null;
     }
 

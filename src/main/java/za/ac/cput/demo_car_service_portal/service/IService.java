@@ -10,10 +10,10 @@ public interface IService<T, X> {
     T update(T t, X x);
 
     //Read all records
-    List<T> findAll();
+    List<T> readAll();
 
     //Read a record by ID
-    T findById(X x);
+    T readById(X x);
 
     //Delete a record by ID
     void delete(X x);

@@ -32,13 +32,13 @@ public class EmployeeController {
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Employee>> readAll() {
-        List<Employee> employees = employeeService.findAll();
+        List<Employee> employees = employeeService.readAll();
         return ResponseEntity.ok(employees);
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Employee> readById(@PathVariable Long id) {
-        Employee employee = employeeService.findById(id);
+        Employee employee = employeeService.readById(id);
         return ResponseEntity.ok(employee);
     }
 

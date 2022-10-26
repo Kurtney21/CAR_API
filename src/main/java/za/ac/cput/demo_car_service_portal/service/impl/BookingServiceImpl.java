@@ -21,15 +21,15 @@ public class BookingServiceImpl implements BookingService {
     public Booking create(Booking booking) { return repository.save(booking); }
 
     @Override
-    public Booking update(Booking booking, Long key) { return null; }
+    public Booking update(Booking booking, Long key) { return repository.save(booking); }
 
     @Override
-    public List<Booking> findAll() {
+    public List<Booking> readAll() {
         return repository.findAll();
     }
 
     @Override
-    public Booking findById(Long key) {
+    public Booking readById(Long key) {
         return repository.findById(key).orElse(null);
     }
 

@@ -20,17 +20,19 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Booking implements Serializable {
-    @Column(name = "booking_id", length = 10)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private long bookingID;
-    private Date date;
-    private String duration;
-    @JoinColumn(name = "custId")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Customer  customerId;
-    @JoinColumn(name = "vehicleID")
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Vehicle> vehicleID;
+    private long id;
 
+    @Column(name = "status", length = 50, columnDefinition = "varchar(50) default 'Pending'")
+    private String booking_status;
+
+    @Column(name = "customer_Id", length = 50)
+    private long customer;
+
+    @Column(name = "service_Id", length = 50)
+    private long service;
+
+    @Column(name = "vehicle_Id", length = 50)
+    private long vehicle;
 }

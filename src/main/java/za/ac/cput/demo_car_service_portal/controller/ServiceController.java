@@ -32,13 +32,13 @@ public class ServiceController {
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Service>> readAll() {
-        List<Service> services = serviceService.findAll();
+        List<Service> services = serviceService.readAll();
         return ResponseEntity.ok(services);
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Service> readById(@PathVariable Long id) {
-        Service service = serviceService.findById(id);
+        Service service = serviceService.readById(id);
         return ResponseEntity.ok(service);
     }
 
