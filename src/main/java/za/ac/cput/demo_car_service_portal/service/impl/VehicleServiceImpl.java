@@ -28,10 +28,10 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public List<Vehicle> findAll() { return repository.findAll(); }
+    public List<Vehicle> readAll() { return repository.findAll(); }
 
     @Override
-    public Vehicle findById(Long key) {
+    public Vehicle readById(Long key) {
         return repository.findById(key).orElse(null);
     }
 

@@ -12,15 +12,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Employee implements Serializable {
-    @NotNull
-    @Column(name = "staff_id", length = 10)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Long empId;
-    @Embedded
-    private UserCredentials user;
-    @Embedded
-    private Role role;
+    private Long id;
 
+    @Embedded
+    private User user;
 
+    @Column(name = "role_Id")
+    private long role_Id;
 }

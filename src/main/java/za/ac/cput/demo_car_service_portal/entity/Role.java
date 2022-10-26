@@ -2,13 +2,19 @@ package za.ac.cput.demo_car_service_portal.entity;
 
 import lombok.*;
 
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 
-@Data
+@Getter
+@ToString
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Embeddable
+@Entity
 public class Role {
-    private String roleName, description;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private long id;
+
+    @Column(name = "role_name", length = 10)
+    private String name;
 }

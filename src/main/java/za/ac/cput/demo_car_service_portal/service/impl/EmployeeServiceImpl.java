@@ -27,10 +27,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<Employee> findAll() { return repository.findAll(); }
+    public List<Employee> readAll() { return repository.findAll(); }
 
     @Override
-    public Employee findById(Long key) {
+    public Employee readById(Long key) {
         return repository.findById(key).orElse(null);
     }
 

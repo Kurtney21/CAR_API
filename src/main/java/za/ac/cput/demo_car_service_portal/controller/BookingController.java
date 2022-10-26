@@ -33,13 +33,13 @@ public class BookingController {
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Booking>> readAll() {
-        List<Booking> bookings = bookingService.findAll();
+        List<Booking> bookings = bookingService.readAll();
         return ResponseEntity.ok(bookings);
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Booking> readById(@PathVariable Long id) {
-        Booking booking = bookingService.findById(id);
+        Booking booking = bookingService.readById(id);
         return ResponseEntity.ok(booking);
     }
 

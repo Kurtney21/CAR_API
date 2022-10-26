@@ -15,15 +15,24 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Embeddable
 public class Vehicle implements Serializable {
-    @NotNull
-    @Column(name = "vehicle_id", length = 10)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Long vehicleID;
-    private String make, model, type, year;
-    @JoinColumn(name = "custId")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Customer customerId;
+    private Long id;
 
+    @Column(name = "Vehicle_Make", length = 50)
+    private String make;
+
+    @Column(name = "Vehicle_Model", length = 50)
+    private String model;
+
+    @Column(name = "Vehicle_Year", length = 50)
+    private String year;
+
+    @Column(name = "Vehicle_Type", length = 50)
+    private String type;
+
+    @Column(name = "Customer_Id", length = 50)
+    private long customer_Id;
 }

@@ -17,11 +17,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Workshop implements Serializable {
- //   @NotNull
-    @Column(name = "workshop_id", length = 10)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private long workshopId;
+    private long id;
+
+    @Column(name = "Workshop_Name", length = 50)
     private String name;
+
+    @Column(name = "Workshop_Address", length = 50)
     private String location;
 }

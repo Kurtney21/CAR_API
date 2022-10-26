@@ -46,18 +46,13 @@ public class WorkshopServiceImpl implements WorkshopService {
     }
 
     @Override
-    public List<Workshop> findAll() { return repository.findAll(); }
+    public List<Workshop> readAll() { return repository.findAll(); }
 
     @Override
-    public Workshop findById(Long key) { return repository.findById(key).orElse(null); }
+    public Workshop readById(Long key) { return repository.findById(key).orElse(null); }
 
     @Override
     public void delete(Long id) {
         repository.deleteById(id);
-    }
-
-    @Override
-    public Workshop findWorkShopByLocationOrName(String Location, String name) {
-        return null;
     }
 }
